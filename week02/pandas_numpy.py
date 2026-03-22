@@ -75,4 +75,6 @@ print(df.head())
 condition =(
     (df['comment_length']>= 100)&
     (df['likes'] >= 20) &
+    (df['likes'] >= 20) &
+    (df['has_image'])
 )
