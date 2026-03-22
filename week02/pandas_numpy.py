@@ -162,4 +162,4 @@ print(pd.DataFrame(sample_np))
 
 print(sample_df.colums)
 
-print(print pd)
+print(pd)
