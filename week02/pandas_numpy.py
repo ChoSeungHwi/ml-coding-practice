@@ -73,5 +73,6 @@ df = pd.DataFrame(data)
 print(df.head())
 
 condition =(
-    (df['comment_length']>= )
+    (df['comment_length']>= 100)&
+    (df['likes'] >= 20) &
 )
