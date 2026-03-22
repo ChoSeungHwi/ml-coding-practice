@@ -79,4 +79,4 @@ condition =(
     (df['has_image'])
 )
 
-winner df
+winner_df
