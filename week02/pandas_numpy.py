@@ -162,4 +162,6 @@ print(pd.DataFrame(sample_np))
 
 print(sample_df.colums)
 
-print(pd.DataFrame(sample_df,))
+print(pd.DataFrame(sample_df,columns= sample_df.columns))
+
+print(pd.DataFrame(sample_np, columns = sample_df.columns))
