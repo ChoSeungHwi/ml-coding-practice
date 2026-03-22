@@ -73,5 +73,5 @@ df = pd.DataFrame(data)
 print(df.head())
 
 condition =(
-    (df)
+    (df['comment_length']>= )
 )
