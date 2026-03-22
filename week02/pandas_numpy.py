@@ -200,3 +200,17 @@ A = np.array([4, 16, 25])
 print(np.sqrt(A))
 
 print(np.arange(8).reshape(2, 4) + 10)
+
+a = np.arange(8).reshape(2, 4) ** 2
+print(a)
+
+print(a.sum())
+print(a.mean())
+print(a.mean(axis = 0))
+
+print(a.min())
+print(a.max())
+
+print(a.max(axis=1))
+print(a.cumsum())
+print(a.argmax())  
