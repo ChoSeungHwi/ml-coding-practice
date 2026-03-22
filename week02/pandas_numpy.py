@@ -111,3 +111,8 @@ data = {
     'salary': [70000.00, 80000.00, 90000.00, 60000.00, 95000.00]
 }
 
+df = pd.DataFrame(data)
+print(df.head())
+
+result = df[df['age'] >= 30][['name', 'salary']]
+print(result)
