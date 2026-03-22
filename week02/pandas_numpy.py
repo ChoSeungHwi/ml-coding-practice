@@ -160,4 +160,6 @@ print(np.array(sample_df))
 sample_np = np.array(sample_df)
 print(pd.DataFrame(sample_np))
 
+print(sample_df.colums)
+
 print
