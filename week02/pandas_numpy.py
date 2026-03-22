@@ -165,3 +165,38 @@ print(sample_df.colums)
 print(pd.DataFrame(sample_df,columns= sample_df.columns))
 
 print(pd.DataFrame(sample_np, columns = sample_df.columns))
+
+print(sample_np)
+print(sample_np[0])
+print(sample_np[0,2])
+print(sample_np[0:3,2:4])
+print(sample_np[:,2])
+
+np_a = np.array([[1,3], [0,-2]])
+print(np_a)
+print(np_a + 10)
+print(np_a - 5)
+print(np_a * 2)
+print(np_a+10 / 3)
+
+np_b = np.array([[1,0], [0,1]])
+print(np_b)
+print(np_a + np_b)
+print(np_a - np_b)
+print(np_a * np_b)
+print(np_a @ np_b)
+
+print(np.random.randint(11))
+print(np.random.randint(50, 71))
+print(np.random.randint(50, 71, 10))
+print(np.random.choice(['red', 'green','white','black','blue'],size=3))
+print(np.random.choice(['red', 'green','white','black','blue'],size=3, replace=False))
+
+print(np.arange(1,11))
+print(np.arange(1,11,2))
+print(np.linspace(1,100,10))
+
+A = np.array([4, 16, 25])
+print(np.sqrt(A))
+
+print(np.arange(8).reshape(2, 4) + 10)
