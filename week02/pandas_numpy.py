@@ -78,3 +78,5 @@ condition =(
     (df['likes'] >= 20) &
     (df['has_image'])
 )
+
+winner df
