@@ -63,3 +63,4 @@ def getTourismStatsItem(yyyymm, nat_cd, ed_cd):
     else:
         return json.loads(responseDecode)
     
+"""### [CODE 1]"""
