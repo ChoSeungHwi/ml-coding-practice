@@ -6,4 +6,7 @@ import json
 client_id =  'Client ID'
 client_secret = 'Client Secret'
 
-def main()
+def main():
+     
+     node = 'news'
+     srcText =  input('검색어를 입력하세요: ')
