@@ -17,4 +17,8 @@ def main():
      jsonReponse = getNaverSearch(node, srcText, 1, 100)      # [CODE 2]
      total = jsonReponse['total']
 
-     
+     while ((jsonReponse != None) and (jsonReponse['display'] != 0)):
+          for post in jsonReponse['items']:
+               cnt += 1
+               getPostData(post,jsonResult,cnt)               #[CODE 2]
+               
