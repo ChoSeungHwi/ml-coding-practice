@@ -4,7 +4,7 @@ import datetime
 import json
 import pandas as pd
 
-ServiceKey = "자신의 Service Key"
+ServiceKey = "dfab2bbf478888cbfe0efd04460a2f0202093ea9fb2874b43fe7e5ee15b5054c"
 
 """### [CODE 0]"""
 
