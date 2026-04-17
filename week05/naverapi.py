@@ -22,4 +22,4 @@ def main():
                cnt += 1
                getPostData(post,jsonResult,cnt)               #[CODE 2]
              
-               
+            start =jsonReponse['star']  
