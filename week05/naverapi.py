@@ -31,3 +31,5 @@ def main():
      jsonFile = json.dumps(jsonResult, indent = 4, sort_keys = True,
                            ensure_ascii = False)
      
+     outfile.write(jsonFile)
+     
