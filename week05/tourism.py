@@ -33,4 +33,6 @@ def getTourismStatsService(nat_cd, ed_cd, nStartYear, nEndYear):
 
     for year in range(nStartYear, nEndYear+1):
         yyyymm = "{0}{1:0>2}".format(str(year), str(month))
-        
+        jsonData = getTourismStatsService(yyyymm, nat_cd,ed_cd)
+        if (jsonData['response']['header']['resultMsg'] == 'OK'):
+            
