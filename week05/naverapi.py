@@ -45,3 +45,4 @@ def getNaverSearch(node, srcText, page_start, display):
     url = base + node + parmeters
     responseDecode = getRequestUrl(url)                       #[CODE1]
     
+    
