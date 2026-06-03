@@ -22,3 +22,5 @@ X, y = make_blobs(n_samples=2000, centers=blob_centers, cluster_std=blob_std,
                   random_state=7)
 
 k = 5
+kmeans = KMeans(n_clusters=k, n_init=10, random_state=42)
+y_pred = kmeans.fit_predict(X)
