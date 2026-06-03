@@ -150,4 +150,29 @@ def plot_dbscan(dbscan, X, size, show_xlabels=True, show_ylabels=True):
     if show_ylabels:
         plt.ylabel("$x_2$", rotation=0)
     else:
-        
+        plt.tick_params(labelleft=False)
+    plt.title(f"eps={dbscan.eps:.2f}, min_samples={dbscan.min_samples}")
+    plt.grid()
+    plt.gca().set_axisbelow(True)
+
+dbscan2 = DBSCAN(eps=0.2)
+dbscan2.fit(X)
+
+plt.figure(figsize=(9, 3.2))
+
+plt.subplot(121)
+plot_dbscan(dbscan, X, size=100)
+
+plt.subplot(122)
+plot_dbscan(dbscan2, X, size=600, show_ylabels=False)
+
+plt.show()
+
+from sklearn.neighbors import KNeighborsClassifier
+
+X, y = make_moons(n_samples=1000, noise=0.05, random_state=42)
+dbscan = DBSCAN(eps=0.2, min_samples=5)
+dbscan.fit(X)
+
+knn = KNeighborsClassifier(n_neighbors=50)
+knn.fit(dbscan.components_, dbscan.labels_[dbscan.core_sample_indices_])
