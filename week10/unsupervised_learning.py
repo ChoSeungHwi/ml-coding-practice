@@ -44,3 +44,5 @@ print(kmeans.cluster_centers_)
 
 print(kmeans.labels_)
 
+# 이너셔
+print(kmeans.inertia_)
