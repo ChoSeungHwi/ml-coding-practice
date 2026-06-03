@@ -46,3 +46,5 @@ print(kmeans.labels_)
 
 # 이너셔
 print(kmeans.inertia_)
+
+print(kmeans.score(X))
