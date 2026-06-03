@@ -88,4 +88,11 @@ for k in (3, 4, 5, 6):
     padding = len(X) // 30
     pos = padding
     ticks = []
-    
+    for i in range(k):
+        coeffs = silhouette_coefficients[y_pred == i]
+        coeffs.sort()
+
+        color = plt.cm.Spectral(i / k)
+        plt.fill_betweenx(np.arange(pos, pos + len(coeffs)), 0, coeffs,
+        facecolor=color, edgecolor=color, alpha=0.7)
+        
