@@ -102,4 +102,43 @@ for k in (3, 4, 5, 6):
 
     plt.gca().yaxis.set_major_locator(FixedLocator(ticks))
     plt.gca().yaxis.set_major_formatter(FixedFormatter(range(k)))
+    if k in (3, 5):
+        plt.ylabel("클러스터")
+    
+    if k in (5, 6):
+        plt.gca().set_xticks([-0.1, 0, 0.2, 0.4, 0.6, 0.8, 1])
+        plt.xlabel("실루엣 계수")
+    else:
+        plt.tick_params(labelbottom=False)
+
+    plt.axvline(x=silhouette_scores[k - 2], color="red", linestyle="--")
+    plt.title(f"$k={k}$")
+
+plt.show()
+
+# DBSCAN
+from sklearn.cluster import DBSCAN
+from sklearn.datasets import make_moons
+
+X, y = make_moons(n_samples=1000, noise=0.05, random_state=42)
+dbscan = DBSCAN(eps=0.05, min_samples=5)
+dbscan.fit(X)
+
+print(dbscan.labels_[:10])
+
+print(dbscan.core_sample_indices_[:10])
+print(dbscan.components_)
+
+def plot_dbscan(dbscan, X, size, show_xlabels=True, show_ylabels=True):
+    core_mask = np.zeros_like(dbscan.labels_, dtype=bool)
+    core_mask[dbscan.core_sample_indices_] = True
+    anomalies_mask = dbscan.labels_ == -1
+    non_core_mask = ~(core_mask | anomalies_mask)
+
+    cores = dbscan.components_
+    anomalies = X[anomalies_mask]
+    non_cores = X[non_core_mask]
+
+    plt.scatter(cores[:, 0], cores[:, 1], c=dbscan.labels_[core_mask], marker='o', s=size, cmap="Paired")
+    plt.scatter(cores[:, 0], cores[:, 1], marker='*', s=20, c=dbscan.labels_[core_mask])
     
